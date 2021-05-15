@@ -1,11 +1,11 @@
-import {getRandomInt} from './random.js'
+import { getRandomInt } from './random.js'
 
-let n = 0;    
+let n = 0;
 
 const createCardNode = ()=>{
-    const imagen = document.createElement("img")
+    const imagen = document.createElement('img');
     // debugger
-    imagen.src=`https://source.unsplash.com/random/${getRandomInt()}` 
+    imagen.src=`https://source.unsplash.com/random/${getRandomInt()}`;
     const imageContainer = document.createElement("div")
     imageContainer.className = "image-container"
     const parrafo = document.createElement("p")
@@ -24,7 +24,7 @@ const createCardNode = ()=>{
 
 const mountNode = document.querySelector(".contenedor")
 const addCardButton = document.querySelector('.agregar')
-/*document.querySelector('button')*/ 
+/*document.querySelector('button')*/
 
 const eliminarCardButton = document.querySelector('.eliminar')
 
@@ -35,12 +35,11 @@ const addCard=()=>{
 
 const eliminarCard=()=>{
     if(n > 0){
-        const ultimo_hijo = mountNode.childNodes[n];
+        const ultimo_hijo = mountNode.childNodes[ n ];
         ultimo_hijo.parentNode.removeChild(ultimo_hijo);
+		n -= 1;
     }
 };
 
 addCardButton.addEventListener('click', addCard)
 eliminarCardButton.addEventListener('click', eliminarCard)
-
-

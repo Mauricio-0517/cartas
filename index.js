@@ -22,12 +22,6 @@ const createCardNode = ()=>{
     return card
 }
 
-const delateCardNode = ()=>{
-    
-    const delateCard=document.querySelector(".card")
-    return delateCard
-}
-
 const mountNode = document.querySelector(".contenedor")
 const addCardButton = document.querySelector('.agregar')
 /*document.querySelector('button')*/ 
@@ -41,13 +35,10 @@ const addCard=()=>{
 
 const eliminarCard=()=>{
     if(n > 0){
-        n--;
         const ultimo_hijo = mountNode.childNodes[n];
         ultimo_hijo.parentNode.removeChild(ultimo_hijo);
-    }else{
-        console.log("n = 0")
     }
-}
+};
 
 addCardButton.addEventListener('click', addCard)
 eliminarCardButton.addEventListener('click', eliminarCard)
